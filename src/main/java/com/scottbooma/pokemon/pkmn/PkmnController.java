@@ -38,7 +38,7 @@ public class PkmnController {
   public Map<String, Pkmn> read(@PathVariable Long id) {
     Pkmn pkmn = pkmnService
       .findById(id)
-      .orElseThrow(() -> new ResourceNotFoundException("No resource with that ID"));
+      .orElseThrow(() -> new ResourceNotFoundException("No Pokemon with that ID"));
     return createHashSingular(pkmn);
   }
 
@@ -54,7 +54,7 @@ public class PkmnController {
   public Map<String, Pkmn> update(@RequestBody Pkmn pkmn, @PathVariable Long id) {
     Pkmn updatedPkmn = pkmnService
       .update(pkmn)
-      .orElseThrow(() -> new ResourceNotFoundException("No resource with that ID"));
+      .orElseThrow(() -> new ResourceNotFoundException("No Pokemon with that ID"));
 
     return createHashSingular(updatedPkmn);
   }
@@ -67,14 +67,14 @@ public class PkmnController {
 
   private Map<String, Pkmn> createHashSingular(Pkmn pkmn){
     Map<String, Pkmn> response = new HashMap<String, Pkmn>();
-    response.put("someResource", pkmn);
+    response.put("pokemon", pkmn);
 
     return response;
   }
 
   private Map<String, Iterable<Pkmn>> createHashPlural(Iterable<Pkmn> pkmns){
     Map<String, Iterable<Pkmn>> response = new HashMap<String, Iterable<Pkmn>>();
-    response.put("pkmns", pkmns);
+    response.put("results", pkmns);
 
     return response;
   }
