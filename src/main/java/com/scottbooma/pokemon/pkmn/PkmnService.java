@@ -28,7 +28,7 @@ public class PkmnService {
     if (foundPkmn.isPresent()) {
         Pkmn updatedPkmn = foundPkmn.get();
         updatedPkmn.setName(pkmn.getName());
-        updatedPkmn.setImage_url(pkmn.getImage_url());
+        updatedPkmn.setImageUrl(pkmn.getImageUrl());
 
         pkmnRepository.save(updatedPkmn);
         return Optional.of(updatedPkmn);
