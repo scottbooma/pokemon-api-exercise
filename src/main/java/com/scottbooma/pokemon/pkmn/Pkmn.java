@@ -22,4 +22,4 @@ public class Pkmn {
 
   @Column(name = "image_url")
   private String image_url;
-}
+}     
