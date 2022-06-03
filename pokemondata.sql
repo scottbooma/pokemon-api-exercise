@@ -1,10 +1,4 @@
-DROP TABLE IF EXISTS pokemon;
-
-CREATE TABLE pokemon (
-    id serial PRIMARY KEY,
-    name VARCHAR(255),
-    image_url VARCHAR(255)
-);
+TRUNCATE pokemon;
 
 INSERT INTO pokemon (name, image_url) VALUES (
     'bulbasaur', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'

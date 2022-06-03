@@ -20,6 +20,6 @@ public class Pkmn {
   @Column(name = "name")
   private String name;
 
-  @Column(name = "imageUrl")
-  private String imageUrl;
+  @Column(name = "image_url")
+  private String image_url;
 }
